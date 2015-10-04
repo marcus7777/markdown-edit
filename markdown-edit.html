@@ -1,0 +1,18 @@
+<link rel="import" href="../marked-element/marked-element.html">
+<link rel="import" href="../paper-input/paper-textarea.html">
+<!--
+`<markdown-edit>` Let's you edit markdown and see the result side-by-side.
+@demo demo.html
+-->
+
+<dom-module id="markdown-edit">
+  <template>
+    <paper-textarea style="width:49%;display:inline-block" value="{{value}}"></paper-textarea>
+    <marked-element style="width:49%;display:inline-block" markdown="{{value}}"></marked-element>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "markdown-edit"
+  });
+</script>
