@@ -31,13 +31,13 @@
             markdownEdit.addEventListener('keydown', function() {
               done();
             });
-            MockInteractions.pressSpace(button);
+            TestHelpers.pressSpace(button);
           });
           test('can be clicked', function(done) {
             markdownEdit.addEventListener('click', function() {
               done();
             });
-            MockInteractions.tap(markdownEdit);
+            TestHelpers.tap(markdownEdit);
           });
         });
       });
