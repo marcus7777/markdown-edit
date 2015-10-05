@@ -18,13 +18,8 @@
     </test-fixture>
     <script>
       suite('<markdown-edit>', function (global) {
-        var markdownEdit;
-        setup(function () {
-          markdownEdit = fixture('markdownEdit');
-        });
-        teardown(function () {
-          //...
-        });
+        var markdownEdit = fixture('markdownEdit');
+        
         suite('basic usage', function (global) {
           test('can be triggered with space', function(done) {
             markdownEdit.addEventListener('keydown', function() {
