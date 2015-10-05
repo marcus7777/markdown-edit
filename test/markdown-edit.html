@@ -13,7 +13,7 @@
   <body>
     <test-fixture id="markdownEdit">
       <template>
-        <markdown-edit></markdown-edit>
+        <markdown-edit value="# 1"></markdown-edit>
       </template>
     </test-fixture>
     <script>
@@ -27,7 +27,6 @@
             MockInteractions.pressSpace(markdownEdit);
           });
           test('with # 1 get h1 in dom', function(done) {
-            markdownEdit.value = "# 1";
             if (markdownEdit.$$('h1')) {
               done();
             }
