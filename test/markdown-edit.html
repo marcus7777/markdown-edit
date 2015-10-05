@@ -28,7 +28,7 @@
           });
           test('with # 1 get h1 in dom', function(done) {
             markdownEdit.value = "# 1";
-            if (this.$$('h1')) {
+            if (markdownEdit.$$('h1')) {
               done();
             }
           });
