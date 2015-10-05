@@ -4,7 +4,6 @@
     <title>markdown-edit</title>
     <script src="../../webcomponentsjs/webcomponents.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
-    <script src="../../test-fixture/test-fixture-mocha.js"></script>
     <link rel="import" href="../../polymer/polymer.html">
 
     <link rel="import" href="../../test-fixture/test-fixture.html">
@@ -31,13 +30,13 @@
             markdownEdit.addEventListener('keydown', function() {
               done();
             });
-            TestHelpers.pressSpace(button);
+            MockInteractions.pressSpace(button);
           });
           test('can be clicked', function(done) {
             markdownEdit.addEventListener('click', function() {
               done();
             });
-            TestHelpers.tap(markdownEdit);
+            MockInteractions.tap(markdownEdit);
           });
         });
       });
