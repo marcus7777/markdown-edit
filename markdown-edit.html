@@ -7,15 +7,20 @@
 
 <dom-module id="markdown-edit">
   <template>
-    <paper-textarea label="{{label}}" style="width:49%;display:inline-block" value="{{value}}"></paper-textarea>
-    <marked-element style="width:49%;display:inline-block" markdown="{{value}}"></marked-element>
+    <template is="dom-if" if="{{focus}}">
+      <paper-textarea label="{{label}}" value="{{value}}"></paper-textarea>
+    </template>
+    <template is="dom-if" if="{{!focus}}">
+      <marked-element markdown="{{value}}"></marked-element>
+    </template>
   </template>
 </dom-module>
 <script>
   Polymer({
     is: "markdown-edit",
     properties:{
-      value:{notify:true}
-    }
+      value:{notify:true},
+      focus:{value:true}
+    }// TODO add on focus to set `focus`
   });
 </script>
