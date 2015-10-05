@@ -19,13 +19,18 @@
     <script>
       suite('<markdown-edit>', function (global) {
         var markdownEdit = fixture('markdownEdit');
-        
         suite('basic usage', function (global) {
           test('can be triggered with space', function(done) {
             markdownEdit.addEventListener('keydown', function() {
               done();
             });
             MockInteractions.pressSpace(markdownEdit);
+          });
+          test('with # 1 get h1 in dom', function(done) {
+            markdownEdit.value = "# 1";
+            if (this.$$('h1')) {
+              done();
+            }
           });
           test('can be clicked', function(done) {
             markdownEdit.addEventListener('click', function() {
