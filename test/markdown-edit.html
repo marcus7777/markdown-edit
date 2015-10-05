@@ -27,7 +27,7 @@
             MockInteractions.pressSpace(markdownEdit);
           });
           test('with # 1 get h1 in dom', function(done) {
-            if (markdownEdit.$$('h1')) {
+            if (markdownEdit.$$('marked-element').$$('div h1').innerText == 1) {
               done();
             }
           });
