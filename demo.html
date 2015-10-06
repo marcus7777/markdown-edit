@@ -8,8 +8,11 @@
   <body>
     <template is="dom-bind">
       <h3>markdown-edit Demo</h3>
-      <markdown-edit value="{{markdown}}"></markdown-edit>
-      <h3>output:</h3>
+      <pre>
+        <markdown-edit label="markdown" value="{{markdown}}"></markdown-edit>
+      </pre>
+      <markdown-edit label="markdown" value="{{markdown}}"></markdown-edit>
+      <h3>value:</h3>
       <p>{{markdown}}</p>
     </template>
   </body>
