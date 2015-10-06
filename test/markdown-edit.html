@@ -13,7 +13,7 @@
   <body>
     <test-fixture id="markdownEdit">
       <template>
-        <markdown-edit value="# 1"></markdown-edit>
+        <markdown-edit value="# 12"></markdown-edit>
       </template>
     </test-fixture>
     <script>
@@ -26,8 +26,9 @@
             });
             MockInteractions.pressSpace(markdownEdit);
           });
-          test('with # 1 get h1 in dom', function(done) {
-            if (markdownEdit.$$('marked-element').$$('div h1').innerText == 1) {
+          test('with # 12 get h1 in dom', function(done) {
+            MockInteractions.blur(markdownEdit);
+            if (markdownEdit.$$('marked-element').$$('div h1').innerText == 12) {
               done();
             }
           });
