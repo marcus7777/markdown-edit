@@ -11,7 +11,7 @@
       <paper-textarea label="{{label}}" value="{{value}}" on-blur="_blur"></paper-textarea>
     </template>
     <template is="dom-if" if="{{!focus}}">
-      <marked-element markdown="{{value}}" on-focus="_focus"></marked-element>
+      <marked-element markdown="{{value}}" on-tap="_focus"></marked-element>
     </template>
   </template>
 </dom-module>
