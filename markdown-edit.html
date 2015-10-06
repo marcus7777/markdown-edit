@@ -8,10 +8,10 @@
 <dom-module id="markdown-edit">
   <template>
     <template is="dom-if" if="{{focus}}">
-      <paper-textarea label="{{label}}" value="{{value}}"></paper-textarea>
+      <paper-textarea label="{{label}}" value="{{value}}" on-blur="_blur"></paper-textarea>
     </template>
     <template is="dom-if" if="{{!focus}}">
-      <marked-element markdown="{{value}}"></marked-element>
+      <marked-element markdown="{{value}}" on-focus="_focus"></marked-element>
     </template>
   </template>
 </dom-module>
@@ -21,6 +21,12 @@
     properties:{
       value:{notify:true},
       focus:{value:true}
-    }// TODO add on focus to set `focus`
+    },
+    _blur: function() {
+      this.focus = false;
+    },
+    _focus: function() {
+      this.focus = true;
+    },
   });
 </script>
