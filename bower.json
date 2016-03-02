@@ -1,0 +1,14 @@
+{
+  "name": "markdown-edit",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/marcus7777/markdown-edit.svg?branch=master)](https://travis-ci.org/marcus7777/markdown-edit)",
+  "main": "markdown-edit.html",
+  "keywords": [
+    "polymer",
+    "web-components"
+  ],
+  "dependencies": {
+    "paper-input": "PolymerElements/paper-input#96efaa0f70",
+    "marked-element": "PolymerElements/marked-element#~1.1.3"
+  }
+}
