@@ -28,7 +28,7 @@
           });
           test('with # 12 get h1 in dom', function(done) {
             MockInteractions.blur(markdownEdit);
-            if (markdownEdit.querySelector('marked-element').$$('div h1').innerText == 12) {
+            if (markdownEdit.querySelector('marked-element div h1').innerText == 12) {
               done();
             }
           });
