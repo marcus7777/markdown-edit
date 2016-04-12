@@ -19,8 +19,8 @@
   Polymer({
     is: "markdown-edit",
     properties:{
-      value:{notify:true},
-      focus:{value:true}
+      value:{type:Boolean, notify:true},
+      focus:{type:Boolean, value:true}
     },
     _blur: function() {
       if (this.value.length>3) {
