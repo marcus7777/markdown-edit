@@ -7,6 +7,7 @@
 
 <dom-module id="markdown-edit">
   <template>
+    <style>paper-textarea wpaper-input-container {width: 100%}</style>
     <template is="dom-if" if="{{focus}}">
       <paper-textarea label="{{label}}" value="{{value}}" on-blur="_blur"></paper-textarea>
     </template>
