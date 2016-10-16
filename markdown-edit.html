@@ -14,6 +14,8 @@
     <template is="dom-if" if="{{!focus}}">
       <marked-element markdown="{{value}}" on-tap="_focus"></marked-element>
     </template>
+    
+    <marked-element markdown="{{value}}" inner-text="{{text}}" style="height:0" ></marked-element>
   </template>
 </dom-module>
 <script>
@@ -21,15 +23,16 @@
     is: "markdown-edit",
     properties:{
       value:{type:String, notify:true},
-      focus:{type:Boolean, value:true}
+      focus:{type:Boolean, value:true},
+      text:{notify:true},
     },
     _blur: function() {
       if (this.value.length>3) {
-        this.focus = false;
+        this.focus = false
       }
     },
     _focus: function() {
-      this.focus = true;
+      this.focus = true
     },
   });
 </script>
