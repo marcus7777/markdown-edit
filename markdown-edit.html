@@ -8,14 +8,13 @@
 <dom-module id="markdown-edit">
   <template>
     <style>paper-textarea wpaper-input-container {width: 100%}</style>
-    <template is="dom-if" if="{{focus}}">
-      <paper-textarea label="{{label}}" value="{{value}}" on-blur="_blur"></paper-textarea>
+    <template is="dom-if" if="[[focus]]">
+      <paper-textarea label="[[label]]" value="{{value}}" on-blur="_blur"></paper-textarea>
     </template>
-    <template is="dom-if" if="{{!focus}}">
-      <marked-element markdown="{{value}}" on-tap="_focus"></marked-element>
+    <template is="dom-if" if="[[!focus]]">
+      <marked-element markdown="[[value]]" on-tap="_focus"></marked-element>
     </template>
-    
-    <marked-element markdown="{{value}}" id="hidden" style="overflow:hidden;height:0" ></marked-element>
+    <marked-element markdown="[[value]]" id="hidden" style="overflow:hidden;height:0" ></marked-element>
   </template>
 </dom-module>
 <script>
@@ -24,7 +23,7 @@
     properties:{
       value:{type:String, notify:true},
       focus:{type:Boolean, value:true},
-      text:{notify:true,computed:"getText(value,maxTextLength)"},
+      textValue:{notify:true,computed:"getText(value,maxTextLength)"},
       maxTextLength: {value:140},
     },
     getText: function(value,max) {
