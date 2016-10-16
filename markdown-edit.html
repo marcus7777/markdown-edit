@@ -15,7 +15,7 @@
       <marked-element markdown="{{value}}" on-tap="_focus"></marked-element>
     </template>
     
-    <marked-element markdown="{{value}}" inner-text="{{text}}" style="overflow:hidden;height:0" ></marked-element>
+    <marked-element markdown="{{value}}" id="hidden" style="overflow:hidden;height:0" ></marked-element>
   </template>
 </dom-module>
 <script>
@@ -24,7 +24,16 @@
     properties:{
       value:{type:String, notify:true},
       focus:{type:Boolean, value:true},
-      text:{notify:true},
+      text:{notify:true,computed:"getText(value,maxTextLength)"},
+      maxTextLength: {value:140},
+    },
+    getText: function(value,max) {
+      var text = this.$.hidden.innerText.replace(/\n/g," ").replace(/  /g," ")
+      if (text.length > (max-1)) {
+        return text.slice(0,(max-1)) + "…"
+      } else {
+        return text
+      }
     },
     _blur: function() {
       if (this.value.length>3) {
